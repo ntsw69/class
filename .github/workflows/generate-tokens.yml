@@ -1,0 +1,48 @@
+name: Generate and Deploy Tokens
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs every 24 hours at midnight
+
+jobs:
+  generate-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Use the Node.js version your project requires
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate and update tokens
+        run: |
+          folders=("zoom/bikash" "zoom/class-10-english" "zoom/class-10-economics" "zoom/class-10-math" "zoom/class-10-nepali" "zoom/class-10-optional-math" "zoom/class-10-science" "zoom/class-11-english" "zoom/class-11-account" "zoom/class-11-biology" "zoom/class-11-chemistry" "zoom/class-11-economics" "zoom/class-11-math" "zoom/class-11-physics" "zoom/class-12-english" "zoom/class-12-account" "zoom/class-12-biology" "zoom/class-12-chemistry" "zoom/class-12-economics" "zoom/class-12-math" "zoom/class-12-physics")
+          for folder in "${folders[@]}"; do
+            echo "Processing $folder"
+            node $folder/generateTokens.js
+            node $folder/updateTokens.js
+          done
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m 'Update tokens'
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy to Netlify
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --prod
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
