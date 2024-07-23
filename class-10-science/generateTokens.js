@@ -2,8 +2,8 @@ const jwt = require('jsonwebtoken');
 const fs = require('fs');
 const path = require('path');
 
-const ZOOM_SDK_KEY = "mN5rKlI3S-CNdB0NlBJ1sg";
-const ZOOM_SDK_SECRET = "hXO7e3UyDrnkKasTVspI4zNMeVV5FCWywKJi";
+const ZOOM_SDK_KEY = "Np6U1EusT_Gci1MSruAavQ";
+const ZOOM_SDK_SECRET = "WDLAdUgcnhGSX38YR5gXezJYoCoipFKt0sWc";
 
 function createJWT(roleType, userName) {
   const payload = {
