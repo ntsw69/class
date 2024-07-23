@@ -1,4 +1,4 @@
-import uitoolkit from 'https://host-noteswift.netlify.app/zoom/main/videosdk-ui-toolkit/index.js';
+import uitoolkit from 'https://class-noteswift.netlify.app/main/videosdk-ui-toolkit/index.js';
 
 var sessionContainer = document.getElementById('sessionContainer');
 var attendeeToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfa2V5IjoibU41cktsSTNTLUNOZEIwTmxCSjFzZyIsInRwYyI6IkNsYXNzIDExIENoZW1pc3RyeSIsInJvbGVfdHlwZSI6MCwidXNlcl9pZGVudGl0eSI6IiIsInNlc3Npb25fa2V5IjoidW5pcXVlX3Nlc3Npb25faWRlbnRpZmllciIsInZlcnNpb24iOjEsImlhdCI6MTcyMTcxMjE0NywiZXhwIjoxNzIxODg0OTQ3fQ.ZKqQYPoDefDMad3zErV_o8CCzgCMpyFCJHCLcQ1LZVY';  // This will be replaced by the updateTokens.js script
