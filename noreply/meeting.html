@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom WebSDK CDN</title>
+    <!-- Include Google Fonts link -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <style>
+        /* Your existing styles */
+        .meeting-info-icon__meeting-paper,
+        .third-part-app-info__panel,
+        .meeting-info-icon__button-wrap,
+        .pop-panel__button,
+        .participants-section-container__participants-footer-bottom,
+        .zoom-workplace-logo,
+        .MuiDivider-root, .vc-toggle {
+            display: none !important;
+        }
+
+        #_vconsole {
+            display: none !important;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var shouldShowAlert = true;
+            // Event listener for beforeunload
+            window.addEventListener('beforeunload', function (e) {
+                if (shouldShowAlert) {
+                    var confirmationMessage = 'Are you sure you want to leave the class?';
+                    var leave = confirm(confirmationMessage);
+                    if (!leave) {
+                        e.preventDefault();
+                        e.returnValue = '';
+                    } else {
+                        shouldShowAlert = false;
+                    }
+                }
+            });
+        });
+    </script>
+    <script src="https://source.zoom.us/3.7.0/lib/vendor/react.min.js"></script>
+    <script src="https://source.zoom.us/3.7.0/lib/vendor/react-dom.min.js"></script>
+    <script src="https://source.zoom.us/3.7.0/lib/vendor/redux.min.js"></script>
+    <script src="https://source.zoom.us/3.7.0/lib/vendor/redux-thunk.min.js"></script>
+    <script src="https://source.zoom.us/3.7.0/lib/vendor/lodash.min.js"></script>
+    <script src="https://source.zoom.us/3.7.0/zoom-meeting-3.7.0.min.js"></script>
+    <script src="js/tool.js"></script>
+    <script src="js/vconsole.min.js"></script>
+    <script src="js/meeting.js"></script>
+</body>
+</html>

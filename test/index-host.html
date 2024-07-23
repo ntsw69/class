@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Host || NoteSwift</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+        <link rel="stylesheet" href="@zoom/videosdk-ui-toolkit/dist/videosdk-ui-toolkit.css">
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            html,
+            body {
+                background-color: black !important;
+                /* Prevent scrolling */
+            }
+    
+            .loading-overlay[_ngcontent-ng-c2265430332] {
+                margin-top: 140px !important;
+            }
+    
+            .mat-mdc-progress-spinner .mdc-circular-progress__determinate-circle,
+            .mat-mdc-progress-spinner .mdc-circular-progress__indeterminate-circle-graphic {
+                stroke: white !important;
+            }
+    
+
+    
+            .ctrl-btn[_ngcontent-ng-c2939039469] {
+                width: 40px !important;
+                height: 40px !important;
+            }
+    
+            #self-view-video[_ngcontent-ng-c3963960193],
+            #self-view-canvas[_ngcontent-ng-c3963960193],
+            #participant-canvas[_ngcontent-ng-c3963960193] {
+                width: 105% !important;
+                height: 80% !important;
+                background-color: #606162 !important;
+                margin-left: -20px !important;
+            }
+    
+            mat-card[_ngcontent-ng-c3963960193] {
+                top: 15px !important;
+                left: 0px !important;
+            }
+    
+            #participants-screen-share-content-canvas[_ngcontent-ng-c2500172694] {
+                max-height: 80% !important;
+            }
+    
+            .user-viefw[_ngcontent-ng-c3963960193] {
+                display: none;
+            }
+    
+            .controlskit {
+                display: none;
+                width: 200px;
+                height: 100px;
+                background-color: transparent !important;
+                position: fixed;
+                right: 10px;
+                padding: 10px;
+                bottom: 15px;
+                border-radius: 5px;
+                text-align: center;
+                font-size: 16px;
+                line-height: 1.5;
+                margin-bottom: 0px !important;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div id="join-flow" style="margin-top: 200px;">
+                <button id="join-button">Start Class</button>
+            </div>
+        
+            <div id='sessionContainer'></div>
+        </main>
+        <script src="@zoom/videosdk-ui-toolkit/index.js" type="module"></script>
+        <script src="scripts-host.js" type="module"></script>
+        
+    </body>
+</html>

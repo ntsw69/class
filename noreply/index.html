@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>Zoom WebSDK CDN</title>
+    <link type="text/css" rel="stylesheet" href="https://source.zoom.us/3.7.0/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <style>
+        #_vconsole,
+        .vc-toggle {
+            display: none;
+        }
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #222;
+            color: #333;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .navbar {
+            width: 100%;
+            max-width: 400px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-inverse {
+            background-color: #f8f9fa;
+            border-color: #ddd;
+        }
+
+        .navbar-brand {
+            color: #482dff;
+        }
+
+        .navbar-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-color: #ffffff !important;
+        }
+
+        .form-group {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border-radius: 30px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+        }
+
+        .form-control:focus {
+            border-color: #482dff;
+            box-shadow: 0 0 12px rgba(0, 123, 255, 0.4);
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+            font-family: 'Poppins', Arial, sans-serif;
+            font-size: 13px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+            display: none;
+            /* Initially hidden */
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 10px;
+            background-color: #482dff;
+            border: none;
+            border-radius: 30px;
+            color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.243);
+            transition: background-color 0.3s ease;
+        }
+
+        /* CSS for landscape mode on mobile devices */
+        @media only screen and (orientation: landscape) {
+
+            .form-control {
+                width: 28% !important;
+            }
+
+            .btn-primary {
+                width: 28%;
+                margin-right: 72%;
+            }
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: #482dff;
+            outline: none;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .navbar {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav style="display: none;" id="nav-tool" class="navbar navbar-inverse">
+        <div class="container">
+            <div style="display: none;" class="navbar-header">
+                <a class="navbar-brand" href="#">Zoom WebSDK CDN</a>
+            </div>
+            <div id="navbar" class="websdktest">
+                <form class="navbar-form" id="meeting_form">
+                    <div class="form-group">
+                        <input type="text" name="display_name" id="display_name" value="" maxlength="100"
+                            placeholder="Enter your name" class="form-control" required>
+                    </div>
+                    <br>
+                    <div class="error-message" id="name_error">Name is required!</div>
+                    <div style="display: none;" class="form-group">
+                        <input type="text" name="meeting_number" id="meeting_number" value="" maxlength="200"
+                            style="width: 100%;" placeholder="Meeting Number" class="form-control" required>
+                    </div>
+                    <div style="display: none;" class="form-group">
+                        <input type="text" name="meeting_pwd" id="meeting_pwd" value="" style="width: 100%;"
+                            maxlength="32" placeholder="Meeting Password" class="form-control">
+                    </div>
+                    <div style="display: none;" class="form-group">
+                        <input type="text" name="meeting_email" id="meeting_email" value="" style="width: 100%;"
+                            maxlength="32" placeholder="Email option" class="form-control">
+                    </div>
+                    <div class="form-group" style="display: none;">
+                        <select id="meeting_role" class="sdk-select">
+                            <option value=0>Attendee</option>
+                            <option value=1>Host</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="display: none;">
+                        <select id="meeting_china" class="sdk-select">
+                            <option value=0>Global</option>
+                            <option value=1>China</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="display: none;">
+                        <select id="meeting_lang" class="sdk-select">
+                            <option value="en-US">English</option>
+                            <option value="de-DE">German Deutsch</option>
+                            <option value="es-ES">Spanish Español</option>
+                            <option value="fr-FR">French Français</option>
+                            <option value="jp-JP">Japanese 日本語</option>
+                            <option value="pt-PT">Portuguese Portuguese</option>
+                            <option value="ru-RU">Russian Русский</option>
+                            <option value="zh-CN">Chinese 简体中文</option>
+                            <option value="zh-TW">Chinese 繁体中文</option>
+                            <option value="ko-KO">Korean 한국어</option>
+                            <option value="vi-VN">Vietnamese Tiếng Việt</option>
+                            <option value="it-IT">Italian italiano</option>
+                            <option value="tr-TR">Turkey-Türkçe</option>
+                            <option value="pl-PL">Poland-Polski</option>
+                            <option value="id-ID">Indonesian Bahasa Indonesia</option>
+                            <option value="nl-NL">Dutch Nederlands</option>
+                        </select>
+                    </div>
+                    <input type="hidden" value="" id="copy_link_value" />
+                    <button type="submit" style="outline: none;" class="btn btn-primary" id="join_meeting">Join Class</button>
+                    <a href="./index.html"></a>
+                    <button style="display: none;" type="reset" class="btn btn-secondary" id="clear_all">Clear</button>
+                    <button style="display: none;" type="button" onclick="window.copyJoinLink('#copy_join_link')"
+                        class="btn btn-primary" id="copy_join_link">Copy Direct join link</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div style="display: none;" id="show-test-tool">
+        <button type="button" class="btn btn-primary" id="show-test-tool-btn"
+            title="Show or hide top test tool">Show</button>
+    </div>
+
+    <iframe style="display: none;" id="websdk-iframe" src="about:blank"></iframe>
+
+    <script>
+        // Function to get URL parameters
+        function getUrlParameter(name) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const url = new URL(window.location.href);
+            const params = new URLSearchParams(url.search);
+            return params.get(name);
+        }
+
+        // Populate form fields with URL parameters and submit the form automatically
+        window.onload = function () {
+            const meetingNumber = getUrlParameter('meeting_number');
+            const meetingPwd = getUrlParameter('meeting_pwd');
+            const displayName = getUrlParameter('name'); // Fetching the 'name' parameter from the URL
+
+            if (meetingNumber) {
+                document.getElementById('meeting_number').value = meetingNumber;
+            }
+
+            if (meetingPwd) {
+                document.getElementById('meeting_pwd').value = meetingPwd;
+            }
+
+            if (displayName) {
+                document.getElementById('display_name').value = displayName; // Setting the 'name' parameter to the display_name input field
+            }
+
+            // Automatically click the join button
+            document.getElementById('join_meeting').click();
+        };
+    </script>
+
+    <script src="https://source.zoom.us/3.7.0/lib/vendor/react.min.js"></script>
+    <script src="https://source.zoom.us/3.7.0/lib/vendor/react-dom.min.js"></script>
+    <script src="https://source.zoom.us/3.7.0/lib/vendor/redux.min.js"></script>
+    <script src="https://source.zoom.us/3.7.0/lib/vendor/redux-thunk.min.js"></script>
+    <script src="https://source.zoom.us/3.7.0/lib/vendor/lodash.min.js"></script>
+    <script src="https://source.zoom.us/3.7.0/zoom-meeting-3.7.0.min.js"></script>
+    <script src="js/tool.js"></script>
+    <script src="js/vconsole.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

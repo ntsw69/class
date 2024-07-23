@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>NoteSwift Class</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="@zoom/videosdk-ui-toolkit/dist/videosdk-ui-toolkit.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        html,
+        body {
+            background-color: black !important;
+            overflow: hidden;
+            /* Prevent scrolling */
+        }
+
+        .loading-overlay[_ngcontent-ng-c2265430332] {
+            margin-top: 140px !important;
+        }
+
+        .mat-mdc-progress-spinner .mdc-circular-progress__determinate-circle,
+        .mat-mdc-progress-spinner .mdc-circular-progress__indeterminate-circle-graphic {
+            stroke: white !important;
+        }
+
+        button[aria-label="Start Share"],
+        button[aria-label="Users"],
+        button[aria-label="Start Video"],
+        button[aria-label="Settings"],
+        .self-view {
+            display: none;
+        }
+
+        .ctrl-btn[_ngcontent-ng-c2939039469] {
+            width: 40px !important;
+            height: 40px !important;
+        }
+
+        #self-view-video[_ngcontent-ng-c3963960193],
+        #self-view-canvas[_ngcontent-ng-c3963960193],
+        #participant-canvas[_ngcontent-ng-c3963960193] {
+            width: 105% !important;
+            height: 70% !important;
+            background-color: #606162 !important;
+            margin-left: -20px !important;
+        }
+
+        mat-card[_ngcontent-ng-c3963960193] {
+            top: 15px !important;
+            left: 0px !important;
+        }
+
+        #participants-screen-share-content-canvas[_ngcontent-ng-c2500172694] {
+            max-height: 80% !important;
+        }
+
+        .user-viefw[_ngcontent-ng-c3963960193] {
+            display: none;
+        }
+
+        .controlskit {
+            display: none;
+            width: 200px;
+            height: 100px;
+            background-color: transparent !important;
+            position: fixed;
+            right: 10px;
+            padding: 10px;
+            bottom: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 0px !important;
+        }
+    </style>
+
+</head>
+<body>
+    <main>
+        <div id="join-flow">
+            <input style="display: none;" type="text" id="username" placeholder="Enter your username">
+            <button style="display: none;" id="join-button" disabled>Join Class</button>
+        </div>
+
+        <div id='sessionContainer'></div>
+    </main>
+
+    <script>
+        $(document).ready(function () {
+            var timeout;
+
+            // Show the div on click
+            $(document).on('click', function () {
+                $('.controlskit').show();
+
+                // Reset timeout on click
+                clearTimeout(timeout);
+
+                // Hide the div after 5 seconds of inactivity
+                timeout = setTimeout(function () {
+                    $('.controlskit').hide();
+                }, 3000);
+            });
+
+            // Initially hide the div
+            $('.controlskit').hide();
+
+            // Function to get URL parameters
+            function getUrlParameter(name) {
+                name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+                var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+                var results = regex.exec(location.search);
+                return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+            };
+
+            // Get the 'name' parameter from the URL and set it as the value of the username input field
+            var username = getUrlParameter('name');
+            $('#username').val(username);
+
+            // Enable the join button if the username field is not empty
+            if ($('#username').val().trim() !== '') {
+                $('#join-button').prop('disabled', false);
+                // Automatically click the join button
+                $('#join-button').click();
+            }
+
+            // Add event listener to the username input field
+            $('#username').on('input', function () {
+                if ($(this).val().trim() !== '') {
+                    $('#join-button').prop('disabled', false);
+                } else {
+                    $('#join-button').prop('disabled', true);
+                }
+            });
+        });
+    </script>
+
+    <script src="@zoom/videosdk-ui-toolkit/index.js" type="module"></script>
+    <script src="scripts-attendee.js" type="module"></script>
+</body>
+</html>
