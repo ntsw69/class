@@ -2,7 +2,7 @@ import uitoolkit from 'https://host-noteswift.netlify.app/zoom/main/videosdk-ui-
 
 var sessionContainer = document.getElementById('sessionContainer');
 var config = {
-    videoSDKJWT: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfa2V5IjoibU41cktsSTNTLUNOZEIwTmxCSjFzZyIsInRwYyI6IkNsYXNzIDEwIEVuZ2xpc2giLCJyb2xlX3R5cGUiOjEsInVzZXJfaWRlbnRpdHkiOiJUZWFjaGVyIiwic2Vzc2lvbl9rZXkiOiJ1bmlxdWVfc2Vzc2lvbl9pZGVudGlmaWVyIiwidmVyc2lvbiI6MSwiaWF0IjoxNzIxNzA0NzM1LCJleHAiOjE3MjE4Nzc1MzV9.ALsZUdx6p3-0Y3OKRS2jSUBSutgOMF05eXbsmzYfr24',  // This will be replaced by the updateTokens.js script
+    videoSDKJWT: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfa2V5IjoibU41cktsSTNTLUNOZEIwTmxCSjFzZyIsInRwYyI6IkNsYXNzIDEwIEVuZ2xpc2giLCJyb2xlX3R5cGUiOjEsInVzZXJfaWRlbnRpdHkiOiJUZWFjaGVyIiwic2Vzc2lvbl9rZXkiOiJ1bmlxdWVfc2Vzc2lvbl9pZGVudGlmaWVyIiwidmVyc2lvbiI6MSwiaWF0IjoxNzIxNzEyMTQ2LCJleHAiOjE3MjE4ODQ5NDZ9.ZOaZmIgjcUa5hP572g0GCjzwcdZaEsOl3xsMEpwbuXs',  // This will be replaced by the updateTokens.js script
     sessionName: 'Class 10 English',
     userName: 'Teacher',
     sessionPasscode: 'NTSW@#1216',
