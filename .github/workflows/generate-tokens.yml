@@ -2,10 +2,7 @@ name: Generate and Deploy Tokens
 
 on:
   schedule:
-    - cron: '*/2 * * * *'  # Runs every 2 minutes
-  push:
-    branches:
-      - main  # Adjust if your default branch is different
+    - cron: '0 0 * * *'  # Runs every 24 hours at midnight
 
 jobs:
   generate-and-deploy:
