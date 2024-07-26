@@ -3,7 +3,7 @@ name: Generate and Deploy Tokens
 on:
   schedule:
     #- cron: '0 0 * * *'  # Runs every 24 hours at midnight
-    - cron: '*/2 * * * *'  # Runs every 2 minutes
+     push:
 
 jobs:
   generate-and-deploy:
