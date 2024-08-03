@@ -1,8 +1,8 @@
 name: Generate and Deploy Tokens
 
 on:
-  schedule:
-   - cron: '0 0 * * *'  # Runs every 24 hours at midnight
+  #schedule:
+   #- cron: '0 0 * * *'  # Runs every 24 hours at midnight
      #push:
 
 jobs:

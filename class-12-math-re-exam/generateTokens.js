@@ -8,7 +8,7 @@ const ZOOM_SDK_SECRET = "WDLAdUgcnhGSX38YR5gXezJYoCoipFKt0sWc";
 function createJWT(roleType, userName) {
   const payload = {
     app_key: ZOOM_SDK_KEY,
-    tpc: 'Class 12 Math Re-exam',  // sessionName
+    tpc: 'Class 12 Math Reexam',  // sessionName
     role_type: roleType, // role type (0 for attendee, 1 for host)
     user_identity: userName, // userName
     session_key: 'unique_session_identifier', // unique session identifier
