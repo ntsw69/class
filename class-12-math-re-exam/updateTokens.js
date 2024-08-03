@@ -22,3 +22,6 @@ attendeeFileContent = attendeeFileContent.replace(/var attendeeToken = '.*';/, `
 fs.writeFileSync(attendeeFilePath, attendeeFileContent, 'utf8');
 
 console.log('Tokens updated successfully');
+
+
+
