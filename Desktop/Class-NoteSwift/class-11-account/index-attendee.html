@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>NoteSwift Class</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet"
+        href="https://class-noteswift.netlify.app/main/videosdk-ui-toolkit/dist/videosdk-ui-toolkit.css">
+    <link rel="stylesheet" href="https://class-noteswift.netlify.app/main/styles.css">
+    <link rel="stylesheet" href="https://class-noteswift.netlify.app/main/attendee.css">
+</head>
+
+
+<body>
+    <main>
+        <div id="join-flow">
+            <input style="display: none;" type="text" id="username" placeholder="Enter your username">
+            <button style="display: none;" id="join-button" disabled>Join Class</button>
+        </div>
+
+        <div id='sessionContainer'></div>
+    </main>
+
+    <script src="https://class-noteswift.netlify.app/main/videosdk-ui-toolkit/index.js" type="module"></script>
+    <script src="https://class-noteswift.netlify.app/main/attendee.js" type="module"></script>
+    <script src="scripts-attendee.js" type="module"></script>
+    <script>
+     document.addEventListener("DOMContentLoaded", function () {
+            // Use MutationObserver to watch for changes in the DOM
+            const observer = new MutationObserver(function (mutations, me) {
+                const button = document.querySelector('.mat-mdc-menu-content.ng-tns-c1967311527-0');
+
+                if (button) {
+                    // Add an event listener to the button
+                    button.addEventListener('click', function () {
+                        window.location.href = 'https://host-noteswift.netlify.app/courses/my-courses/';
+                    });
+                    // Once we find the button, stop observing
+                    me.disconnect();
+                    return;
+                }
+            });
+
+            // Start observing the document for changes
+            observer.observe(document, {
+                childList: true,
+                subtree: true
+            });
+        });
+    </script>
+</body>
+
+</html>
