@@ -3,7 +3,7 @@ html,
 body {
     background-color: black !important;
     overflow: hidden;
-    transform: rotate(90deg) !important;
+  
     /* Prevent scrolling */
 }
 
