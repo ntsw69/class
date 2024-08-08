@@ -13,9 +13,10 @@
     <link rel="stylesheet" href="https://class-noteswift.netlify.app/main/attendee.css">
 </head>
 <style>
-      transform: rotate(90deg);
+    body {
+        transform: rotate(90deg) !important;
+    }
 </style>
-
 <body>
     <main>
         <div id="join-flow">
@@ -23,6 +24,7 @@
             <button style="display: none;" id="join-button" disabled>Join Class</button>
         </div>
 
+        <h1>Test</h1>
         <div id='sessionContainer'></div>
     </main>
 
@@ -30,7 +32,7 @@
     <script src="https://class-noteswift.netlify.app/main/attendee.js" type="module"></script>
     <script src="scripts-attendee.js" type="module"></script>
     <script>
-     document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function () {
             // Use MutationObserver to watch for changes in the DOM
             const observer = new MutationObserver(function (mutations, me) {
                 const button = document.querySelector('.mat-mdc-menu-content.ng-tns-c1967311527-0');
