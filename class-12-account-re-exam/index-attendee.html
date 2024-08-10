@@ -25,8 +25,49 @@
     <script src="https://class-noteswift.netlify.app/main/videosdk-ui-toolkit/index.js" type="module"></script>
     <script src="https://class-noteswift.netlify.app/main/attendee.js" type="module"></script>
     <script src="scripts-attendee.js" type="module"></script>
-    
-    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const maxRetries = 20; // Maximum number of retries (20 seconds)
+            let attempts = 0;
+
+            const intervalId = setInterval(function () {
+                const firstButton = document.querySelector('button.mdc-button.mdc-button--raised.mat-mdc-raised-button.mat-primary.mat-mdc-button-base');
+
+                if (firstButton) {
+                    // Click the first button when it's found
+                    firstButton.click();
+                    console.log('First button clicked successfully!');
+
+                    // Stop checking for the first button
+                    clearInterval(intervalId);
+
+                    // Now look for the second button
+                    const secondButtonInterval = setInterval(function () {
+                        const secondButton = document.querySelector('button[aria-label="Mute"]');
+
+                        if (secondButton) {
+                            // Click the second button when it's found
+                            secondButton.click();
+                            console.log('Second button (Mute) clicked successfully!');
+                            clearInterval(secondButtonInterval);
+                        } else {
+                            attempts++;
+                            if (attempts >= maxRetries) {
+                                console.log('Second button (Mute) not found after multiple attempts.');
+                                clearInterval(secondButtonInterval);
+                            }
+                        }
+                    }, 1000); // Check every second for the second button
+                } else {
+                    attempts++;
+                    if (attempts >= maxRetries) {
+                        console.log('First button not found after multiple attempts.');
+                        clearInterval(intervalId);
+                    }
+                }
+            }, 1000); // Check every second for the first button
+        });
+    </script>
 </body>
 
 </html>
