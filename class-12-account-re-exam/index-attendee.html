@@ -29,7 +29,7 @@
         document.addEventListener("DOMContentLoaded", function () {
             // Use MutationObserver to watch for changes in the DOM
             const observer = new MutationObserver(function (mutations, me) {
-                const button = document.querySelector('button.mat-mdc-raised-button');
+                const button = document.querySelector('button.mdc-button.mdc-button--raised.mat-mdc-raised-button.mat-primary.mat-mdc-button-base');
 
                 if (button) {
                     // Automatically click the button when it's found
