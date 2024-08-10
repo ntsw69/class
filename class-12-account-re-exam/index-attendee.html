@@ -27,25 +27,30 @@
     <script src="scripts-attendee.js" type="module"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Use MutationObserver to watch for changes in the DOM
-            const observer = new MutationObserver(function (mutations, me) {
+            const maxRetries = 20; // Maximum number of retries (20 seconds)
+            let attempts = 0;
+
+            const intervalId = setInterval(function () {
                 const button = document.querySelector('button.mdc-button.mdc-button--raised.mat-mdc-raised-button.mat-primary.mat-mdc-button-base');
 
                 if (button) {
                     // Automatically click the button when it's found
                     button.click();
 
-                    // Once we find the button, stop observing
-                    me.disconnect();
-                    return;
-                }
-            });
+                    // Log success message
+                    console.log('Button clicked successfully!');
 
-            // Start observing the document for changes
-            observer.observe(document, {
-                childList: true,
-                subtree: true
-            });
+                    // Stop the interval once the button is clicked
+                    clearInterval(intervalId);
+                } else {
+                    attempts++;
+                    if (attempts >= maxRetries) {
+                        // Log failure message if max retries are reached
+                        console.log('Button not found after multiple attempts.');
+                        clearInterval(intervalId);
+                    }
+                }
+            }, 1000); // Check every second (1000 ms)
         });
     </script>
 </body>
