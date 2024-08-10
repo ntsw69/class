@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://class-noteswift.netlify.app/main/videosdk-ui-toolkit/dist/videosdk-ui-toolkit.css">
+    <link rel="stylesheet"
+        href="https://class-noteswift.netlify.app/main/videosdk-ui-toolkit/dist/videosdk-ui-toolkit.css">
     <link rel="stylesheet" href="https://class-noteswift.netlify.app/main/styles.css">
     <link rel="stylesheet" href="https://class-noteswift.netlify.app/main/attendee.css">
 </head>
@@ -26,46 +27,27 @@
     <script src="https://class-noteswift.netlify.app/main/attendee.js" type="module"></script>
     <script src="scripts-attendee.js" type="module"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const maxRetries = 20; // Maximum number of retries (20 seconds)
-            let attempts = 0;
+     document.addEventListener("DOMContentLoaded", function () {
+            // Use MutationObserver to watch for changes in the DOM
+            const observer = new MutationObserver(function (mutations, me) {
+                const button = document.querySelector('.mat-mdc-menu-content.ng-tns-c1967311527-0');
 
-            const intervalId = setInterval(function () {
-                const firstButton = document.querySelector('button.mdc-button.mdc-button--raised.mat-mdc-raised-button.mat-primary.mat-mdc-button-base');
-
-                if (firstButton) {
-                    // Click the first button when it's found
-                    firstButton.click();
-                    console.log('First button clicked successfully!');
-
-                    // Stop checking for the first button
-                    clearInterval(intervalId);
-
-                    // Now look for the second button
-                    const secondButtonInterval = setInterval(function () {
-                        const secondButton = document.querySelector('button[aria-label="Mute"]');
-
-                        if (secondButton) {
-                            // Click the second button when it's found
-                            secondButton.click();
-                            console.log('Second button (Mute) clicked successfully!');
-                            clearInterval(secondButtonInterval);
-                        } else {
-                            attempts++;
-                            if (attempts >= maxRetries) {
-                                console.log('Second button (Mute) not found after multiple attempts.');
-                                clearInterval(secondButtonInterval);
-                            }
-                        }
-                    }, 1000); // Check every second for the second button
-                } else {
-                    attempts++;
-                    if (attempts >= maxRetries) {
-                        console.log('First button not found after multiple attempts.');
-                        clearInterval(intervalId);
-                    }
+                if (button) {
+                    // Add an event listener to the button
+                    button.addEventListener('click', function () {
+                        window.location.href = 'https://host-noteswift.netlify.app/courses/my-courses/';
+                    });
+                    // Once we find the button, stop observing
+                    me.disconnect();
+                    return;
                 }
-            }, 1000); // Check every second for the first button
+            });
+
+            // Start observing the document for changes
+            observer.observe(document, {
+                childList: true,
+                subtree: true
+            });
         });
     </script>
 </body>
