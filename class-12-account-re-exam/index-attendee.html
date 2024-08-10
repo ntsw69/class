@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet"
-        href="https://class-noteswift.netlify.app/main/videosdk-ui-toolkit/dist/videosdk-ui-toolkit.css">
+    <link rel="stylesheet" href="https://class-noteswift.netlify.app/main/videosdk-ui-toolkit/dist/videosdk-ui-toolkit.css">
     <link rel="stylesheet" href="https://class-noteswift.netlify.app/main/styles.css">
     <link rel="stylesheet" href="https://class-noteswift.netlify.app/main/attendee.css">
 </head>
@@ -27,16 +26,15 @@
     <script src="https://class-noteswift.netlify.app/main/attendee.js" type="module"></script>
     <script src="scripts-attendee.js" type="module"></script>
     <script>
-     document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function () {
             // Use MutationObserver to watch for changes in the DOM
             const observer = new MutationObserver(function (mutations, me) {
-                const button = document.querySelector('.mat-mdc-menu-content.ng-tns-c1967311527-0');
+                const button = document.querySelector('button.mat-mdc-raised-button');
 
                 if (button) {
-                    // Add an event listener to the button
-                    button.addEventListener('click', function () {
-                        window.location.href = 'https://host-noteswift.netlify.app/courses/my-courses/';
-                    });
+                    // Automatically click the button when it's found
+                    button.click();
+
                     // Once we find the button, stop observing
                     me.disconnect();
                     return;
