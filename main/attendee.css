@@ -7,7 +7,7 @@ body {
 }
 
 .loading-overlay[_ngcontent-ng-c2265430332] {
-    margin-top: 140px !important;
+    margin-top: 160px !important;
 }
 
 .mat-mdc-progress-spinner .mdc-circular-progress__determinate-circle,
@@ -32,7 +32,7 @@ button[aria-label="Settings"],
 #self-view-canvas[_ngcontent-ng-c3963960193],
 #participant-canvas[_ngcontent-ng-c3963960193] {
     width: 105% !important;
-    height: 75% !important;
+    height: 85% !important;
     background-color: #000000 !important;
     margin-left: -20px !important;
 }
@@ -43,7 +43,7 @@ mat-card[_ngcontent-ng-c3963960193] {
 }
 
 #participants-screen-share-content-canvas[_ngcontent-ng-c2500172694] {
-    max-height: 80% !important;
+    max-height: 85% !important;
 }
 
 .user-viefw[_ngcontent-ng-c3963960193] {
