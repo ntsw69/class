@@ -9,6 +9,15 @@
         <link rel="stylesheet" href="https://class-noteswift.netlify.app/main/videosdk-ui-toolkit/dist/videosdk-ui-toolkit.css">
         <link rel="stylesheet" href="https://class-noteswift.netlify.app/main/styles.css">
         <link rel="stylesheet" href="https://class-noteswift.netlify.app/main/host.css">
+   <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+        <script>
+          window.OneSignalDeferred = window.OneSignalDeferred || [];
+          OneSignalDeferred.push(async function(OneSignal) {
+            await OneSignal.init({
+              appId: "ae1af931-5982-48d3-8664-485dd2d70005",
+            });
+          });
+        </script>
     </head>
     <body>
         <main>
