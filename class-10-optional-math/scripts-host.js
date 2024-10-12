@@ -2,7 +2,7 @@ import uitoolkit from 'https://class-noteswift.netlify.app/main/videosdk-ui-tool
 
 var sessionContainer = document.getElementById('sessionContainer');
 var config = {
-    videoSDKJWT: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfa2V5IjoiTnhEWWdyTVNSMUdSOHVqdDBTekppZyIsInRwYyI6IkNsYXNzIDEwIE9wdGlvbmFsIE1hdGgiLCJyb2xlX3R5cGUiOjEsInVzZXJfaWRlbnRpdHkiOiJUZWFjaGVyIiwic2Vzc2lvbl9rZXkiOiJ1bmlxdWVfc2Vzc2lvbl9pZGVudGlmaWVyIiwidmVyc2lvbiI6MSwiaWF0IjoxNzI4NjA3OTc1LCJleHAiOjE3Mjg3ODA3NzV9.2iU8ODacs7B8vU9lN1ZPAl-MTPeyErUtBZU7PzggTBA',  // This will be replaced by the updateTokens.js script
+    videoSDKJWT: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfa2V5IjoiTnhEWWdyTVNSMUdSOHVqdDBTekppZyIsInRwYyI6IkNsYXNzIDEwIE9wdGlvbmFsIE1hdGgiLCJyb2xlX3R5cGUiOjEsInVzZXJfaWRlbnRpdHkiOiJUZWFjaGVyIiwic2Vzc2lvbl9rZXkiOiJ1bmlxdWVfc2Vzc2lvbl9pZGVudGlmaWVyIiwidmVyc2lvbiI6MSwiaWF0IjoxNzI4Njk0MzA0LCJleHAiOjE3Mjg4NjcxMDR9.2OSamVqAbitN7ScJShOByktBTKHvYIcm7k5zwy6W4BU',  // This will be replaced by the updateTokens.js script
     sessionName: 'Class 10 Optional Math',
     userName: 'Teacher',
     sessionPasscode: 'NTSW@#1216',
