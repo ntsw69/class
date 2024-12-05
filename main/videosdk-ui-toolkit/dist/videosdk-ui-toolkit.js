@@ -41464,7 +41464,7 @@
               static isSupportSending1080P() {
                 var s, c;
                 return !(null === (s = window.JsMediaSDK_Instance) || void 0 === s || null === (c = s
-                  .util) || void 0 === c || !c.get1080Pcapacity())
+                  .util) || void 0 === c || !c.get720Pcapacity())
               }
               static isSupportSubscribing1080P() {
                 var s, c;
