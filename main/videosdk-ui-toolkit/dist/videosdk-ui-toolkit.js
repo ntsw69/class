@@ -33552,8 +33552,8 @@
           return t
         })();
         var pT = function (t) {
-          return t[t.Video_90P = 0] = "Video_90P", t[t.Video_180P = 1] = "Video_180P", t[t.Video_1080P = 2] =
-            "Video_1080P", t[t.Video_1080P = 3] = "Video_1080P", t
+          return t[t.Video_90P = 0] = "Video_90P", t[t.Video_180P = 1] = "Video_180P", t[t.Video_360P = 2] =
+            "Video_360P", t[t.Video_720P = 3] = "Video_720P", t
         }(pT || {});
         const RB = navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator
           .userAgent.match(/iPhone/i) || /MacIntel/i.test(navigator.platform) && navigator?.maxTouchPoints > 2 ||
@@ -33600,7 +33600,7 @@
                   maxColumns: Math.max(1, Math.floor(n / 4))
                 }), this.getVideoQuality = (n, o) => {
                   let l = pT.Video_180P;
-                  return o <= 2 && n >= 550 ? l = pT.Video_1080P : o <= 4 && n >= 270 ? l = pT.Video_1080P :
+                  return o <= 2 && n >= 550 ? l = pT.Video_720P : o <= 4 && n >= 270 ? l = pT.Video_360P :
                     n >= 130 && (l = pT.Video_180P), l
                 }, this.getVideoLayout = (n, o, l, u, h) => {
                   if (l > u || l <= 0) return [];
@@ -34643,7 +34643,7 @@
               var n = this;
               return et(function* () {
                 crossOriginIsolated || console.error("UIKit:",
-                    "SharedArrayBuffer disabled. 1080P, Gallery View, and Virtual Background not available."
+                    "SharedArrayBuffer disabled. 720p, Gallery View, and Virtual Background not available."
                     ), n.features = n.uitoolkitconfig.features, n.client = kl().createClient(), e
                   .runOutsideAngular(et(function* () {
                     if (n.client) {
@@ -41461,10 +41461,10 @@
                   .util) || void 0 === c || null === (d = c.isSupportVideoShareSend) || void 0 === d || !d
                   .call(c))
               }
-              static isSupportSending1080P() {
+              static isSupportSending720P() {
                 var s, c;
                 return !(null === (s = window.JsMediaSDK_Instance) || void 0 === s || null === (c = s
-                  .util) || void 0 === c || !c.get720Pcapacity())
+                  .util) || void 0 === c || !c.get720pcapacity())
               }
               static isSupportSubscribing1080P() {
                 var s, c;
@@ -42613,8 +42613,8 @@
               return r.Sharing = "sharing", r.Paused = "paused", r.End = "ended", r
             }({}),
             Do = function (r) {
-              return r[r.Video_90P = 0] = "Video_90P", r[r.Video_180P = 1] = "Video_180P", r[r.Video_1080P = 2] =
-                "Video_1080P", r[r.Video_1080P = 3] = "Video_1080P", r[r.Video_1080P = 4] = "Video_1080P", r
+              return r[r.Video_90P = 0] = "Video_90P", r[r.Video_180P = 1] = "Video_180P", r[r.Video_360P = 2] =
+                "Video_360P", r[r.Video_720P = 3] = "Video_720P", r[r.Video_1080P = 4] = "Video_1080P", r
             }({}),
             Bv = function (r) {
               return r.Active = "Active", r.Inactive = "Inactive", r
@@ -52854,7 +52854,7 @@
             r.DEFAULT = "", r.MAIN = "main"
           }(LM || (LM = {})),
           function (r) {
-            r.Video_90P = "0", r.Video_180P = "1", r.Video_1080P = "2", r.Video_1080P = "3", r.Video_1080P = "4"
+            r.Video_90P = "0", r.Video_180P = "1", r.Video_360P = "2", r.Video_720P = "3", r.Video_1080P = "4"
           }(VM || (VM = {}));
           const kA = new Map;
  
@@ -55441,7 +55441,7 @@
             const {
               hd: c
             } = r || {};
-            return 0 !== a && 0 !== s || (c && Wt.isSupportSending1080P() ? (a = 1280, s = 720) : (a = 640, s =
+            return 0 !== a && 0 !== s || (c && Wt.isSupportSending720P() ? (a = 1280, s = 720) : (a = 640, s =
               360)), {
               captureWidth: a,
               captureHeight: s
@@ -55621,16 +55621,16 @@
               }
             } = s, A = r === c;
             let v = a;
-            if (a >= Do.Video_1080P)
+            if (a >= Do.Video_720P)
               if (d) {
-                const _ = m.filter(S => S.videoQuality === Do.Video_1080P).map(S => S.userId),
+                const _ = m.filter(S => S.videoQuality === Do.Video_720P).map(S => S.userId),
                   E = p ?? 1;
                 _.length >= E && (_.includes(r) || A || (console.warn(
-                  `Warning: Web Video SDK currently only supports subscribing to ${E} 1080P video stream, so quality has been downgraded to 1080P`
-                  ), v = Do.Video_1080P))
-              } else console.warn("Can not subscribe 1080P video stream,will downgrade to 1080P stream"), v = Do
-                .Video_1080P;
-            const y = Math.max(f, Do.Video_1080P);
+                  `Warning: Web Video SDK currently only supports subscribing to ${E} 720p video stream, so quality has been downgraded to 360p`
+                  ), v = Do.Video_360P))
+              } else console.warn("Can not subscribe 720P video stream,will downgrade to 360P stream"), v = Do
+                .Video_360P;
+            const y = Math.max(f, Do.Video_360P);
             return [v, Math.min(v, y)]
           }
           const Al = fi.createAgent(),
@@ -56020,7 +56020,7 @@
               isCurrentUserStartedVideo: !1,
               spotlightUserList: [],
               isCaptureForbidden: !1,
-              receivedVideoMaxQuality: navigator.hardwareConcurrency >= 8 ? Do.Video_1080P : Do.Video_1080P,
+              receivedVideoMaxQuality: navigator.hardwareConcurrency >= 8 ? Do.Video_1080P : Do.Video_360P,
               subscribedVideoList: [],
               renderedVideoList: [],
               ensuredCanvas: [],
@@ -56600,8 +56600,8 @@
                     renderedVideoList: d,
                     receivedVideoMaxQuality: m
                   }
-                } = a.value, p = d.filter(f => f.videoQuality >= Do.Video_1080P);
-                return m !== c && p.length > 0 && (c >= Do.Video_1080P || m >= Do.Video_1080P) && p.forEach(
+                } = a.value, p = d.filter(f => f.videoQuality >= Do.Video_720P);
+                return m !== c && p.length > 0 && (c >= Do.Video_720P || m >= Do.Video_720P) && p.forEach(
                   f => {
                     Al.subscribeVideo(f.userId, f.videoQuality, !1)
                   }), ck(c)
@@ -56901,7 +56901,7 @@
                 } = a.value;
                 !d || c && c.userId === d.userId || (null != c && c.userId && (c.loaded && bl
                     .cancelPrefetchVideoSsrc(c.userId), Al.unsubscribeVideo(c.userId)), Al
-                  .subscribeVideo(d.userId, Do.Video_1080P, !1), bl.prefetchVideoSsrc(d.userId))
+                  .subscribeVideo(d.userId, Do.Video_360P, !1), bl.prefetchVideoSsrc(d.userId))
               }), ct(Ne)),
               videoRenderEpics16: (r, a) => re(r, pe.NewActiveSpeakerFirstFrameCallback).pipe(be(() => !!a.value
                 .video.prefetchedVideo), Se(s => {
@@ -57484,7 +57484,7 @@
                   let f = Zl("__ZOOM_SDK_PREVIEW_VIRTUAL_BACKGROUND_CANVAS_@__");
                   a.id ? f = a.id : a.id = f;
                   let [A, v] = [640, 360];
-                  Wt.isSupportSending1080P() && (A = 1280, v = 720), r.startVirtualBackgroundSetting(f, p, 0,
+                  Wt.isSupportSending720P() && (A = 1280, v = 720), r.startVirtualBackgroundSetting(f, p, 0,
                     m ?? "default", A, v), p !== nd && setTimeout(() => {
                     nA(p)
                   }, 0)
@@ -63363,7 +63363,7 @@
                           mask: P
                         } = S || {};
                       se && m.mirrorVideo(se), (ge || te) && (console.log(
-                          "HD support is currently limited, and comes with a number of restrictions and limitations. Please visit https://developers.zoom.us/docs/video-sdk/web/video/#1080P-video for more details"
+                          "HD support is currently limited, and comes with a number of restrictions and limitations. Please visit https://developers.zoom.us/docs/video-sdk/web/video/#720p-video for more details"
                           ), M && Wt.isCompatibleHardwareForEncode() && Wt
                         .isSupportVideoEncodeHardwareAcceleration().then(ee => {
                           ee && (m.enableHardwareAccelerationForVideoEncode(!0), d(Yu({
@@ -70129,11 +70129,11 @@
                     isFirefox: v
                   } = Je;
                 !c && (A || v) && Tv() ? a.push("Virtual Background") : s.push("Virtual Background"), (c ||
-                  A) && Tv() ? (a.push("1080P Video (send)"), a.push("Share Chrome Tab Audio")) : (s.push(
-                    "1080P Video (send)"), s.push("Share Chrome Tab Audio")), (c || A || v) && Tv() ? a.push(
+                  A) && Tv() ? (a.push("720p Video (send)"), a.push("Share Chrome Tab Audio")) : (s.push(
+                    "720p Video (send)"), s.push("Share Chrome Tab Audio")), (c || A || v) && Tv() ? a.push(
                     "Render Multiple Videos") : s.push("Render Multiple Videos"), !c && Tv() ? (a.push(
-                    "Screen Share (send)"), a.push("1080P Video (receive)"), a.push("Share 2nd Camera")) : (s
-                    .push("Screen Share (send)"), s.push("1080P Video (receive)"), s.push("Share 2nd Camera")),
+                    "Screen Share (send)"), a.push("720p Video (receive)"), a.push("Share 2nd Camera")) : (s
+                    .push("Screen Share (send)"), s.push("720p Video (receive)"), s.push("Share 2nd Camera")),
                   Tv() ? (a.push("Audio"), a.push("Video"), a.push("Screen Share (receive)"), a.push("Chat"), a
                     .push("Closed Captioning"), a.push("Live Transcription"), a.push("Live Translation"), a
                     .push("Cloud Recording"), a.push("Call Out (PSTN)"), a.push("Command Channel"), a.push(
