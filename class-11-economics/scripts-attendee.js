@@ -1,7 +1,7 @@
 import uitoolkit from 'https://class-noteswift.netlify.app/main/videosdk-ui-toolkit/index.js';
 
 var sessionContainer = document.getElementById('sessionContainer');
-var attendeeToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfa2V5Ijoibmx4U1V1aF9TZ3VVaWpYQ2tfNnNWUSIsInRwYyI6IkNsYXNzIDExIEVjb25vbWljcyIsInJvbGVfdHlwZSI6MCwidXNlcl9pZGVudGl0eSI6IiIsInNlc3Npb25fa2V5IjoidW5pcXVlX3Nlc3Npb25faWRlbnRpZmllciIsInZlcnNpb24iOjEsImlhdCI6MTczMzQ0NjY4OCwiZXhwIjoxNzMzNjE5NDg4fQ.VySb3VoMH5M-wUZHrabx2ngSW5t5ixBYxxgcjeT2BPY';  // This will be replaced by the updateTokens.js script
+var attendeeToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfa2V5Ijoibmx4U1V1aF9TZ3VVaWpYQ2tfNnNWUSIsInRwYyI6IkNsYXNzIDExIEVjb25vbWljcyIsInJvbGVfdHlwZSI6MCwidXNlcl9pZGVudGl0eSI6IiIsInNlc3Npb25fa2V5IjoidW5pcXVlX3Nlc3Npb25faWRlbnRpZmllciIsInZlcnNpb24iOjEsImlhdCI6MTczMzUzMzA1NywiZXhwIjoxNzMzNzA1ODU3fQ.MXSkSoSYsrAZxlJ9_Ml_b1uWsUqpNPIrNy5K-W3FIlw';  // This will be replaced by the updateTokens.js script
 
 
 function joinSession() {
