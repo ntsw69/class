@@ -23,7 +23,7 @@ jobs:
 
       - name: Generate and update tokens
         run: |
-          folders=("class-10-english" "class-10-nepali" "class-10-economics" "class-10-math" "class-10-optional-math" "class-10-science" "class-11-english" "class-11-account" "class-11-biology" "class-11-chemistry" "class-11-economics" "class-11-math"  "class-11-physics" "class-12-english" "class-12-account" "class-12-biology" "class-12-chemistry" "class-12-economics" "class-12-math" "class-12-account-re-exam" "class-12-math-re-exam" "class-12-physics")
+          folders=("class-10-english" "class-10-nepali" "class-10-economics" "class-10-math" "class-10-optional-math" "class-10-science" "class-11-english" "class-11-account" "class-11-biology" "class-11-chemistry" "class-11-economics" "class-11-math"  "class-11-physics" "class-12-english" "class-12-account" "class-12-biology" "class-12-chemistry" "class-12-economics" "class-12-math" "class-12-account-re-exam" "class-12-math-re-exam" "class-12-physics" "class-12-social")
           for folder in "${folders[@]}"; do
             echo "Processing $folder"
             node $folder/generateTokens.js
