@@ -95,7 +95,7 @@ function websdkready() {
           console.log(res);
           meetingConfig.signature = res;
           meetingConfig.sdkKey = CLIENT_ID;
-          var joinUrl = "https://class-noteswift.netlify.app/noreply/meeting.html?" + testTool.serialize(meetingConfig);
+          var joinUrl = "https://class.noteswift.in/noreply/meeting.html?" + testTool.serialize(meetingConfig);
           console.log(joinUrl);
           window.open(joinUrl, "_self");
         },
@@ -131,7 +131,7 @@ function websdkready() {
         meetingConfig.sdkKey = CLIENT_ID;
         var joinUrl =
           testTool.getCurrentDomain() +
-          "https://class-noteswift.netlify.app/noreply/meeting.html?" +
+          "https://class.noteswift.in/noreply/meeting.html?" +
           testTool.serialize(meetingConfig);
         document
           .getElementById("copy_link_value")
