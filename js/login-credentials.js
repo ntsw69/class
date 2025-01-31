@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const errorDiv = document.getElementById("login-error");
 
   const users = [
-    { email: "user@example.com", password: "password123" },
-    { email: "admin@example.com", password: "admin@123" }
+    { email: "acharyaprasiddha6@gmail.com", password: "12345678" }, // Admin
+    { email: "mathteacher@example.com", password: "admin@123" } // Math Teacher
   ];
 
   loginForm.addEventListener("submit", function (event) {
