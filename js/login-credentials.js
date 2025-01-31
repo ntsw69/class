@@ -4,8 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const users = [
     { email: "acharyaprasiddha6@gmail.com", password: "12345678" }, // Admin
-    { email: "bikashpandey486@gmail.com", password: "admin@123" }, // Math Teacher
-    { email: "mathteacher@example.com", password: "admin@123" } // Math Teacher
+    { email: "bikashpandey486@gmail.com", password: "admin@123" }, // Admin
+    { email: "jagdishbhatt@noteswift.in", password: "admin@eco123" }, // Economics Teacher
+    { email: "jayrajbhatt@noteswift.in", password: "admin@account" }, // Account Teacher
+    { email: "bishalbhatta@noteswift.in", password: "admin@english" } // English Teacher
   ];
 
   loginForm.addEventListener("submit", function (event) {
