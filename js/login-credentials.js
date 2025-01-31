@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const users = [
     { email: "acharyaprasiddha6@gmail.com", password: "12345678" }, // Admin
+    { email: "bikashpandey486@gmail.com", password: "admin@123" }, // Math Teacher
     { email: "mathteacher@example.com", password: "admin@123" } // Math Teacher
   ];
 
