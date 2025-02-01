@@ -3,20 +3,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const errorDiv = document.getElementById("login-error");
 
   const users = [
-    { email: "acharyaprasiddha6@gmail.com", password: "12345678" }, // Admin
-    { email: "bikashpandey486@gmail.com", password: "admin@123" }, // Admin
-    { email: "jagdishbhatt@noteswift.in", password: "admin@eco123" }, // Economics Teacher
-    { email: "jayrajbhatt@noteswift.in", password: "admin@account" }, // Account Teacher
-    { email: "bishalbhatta@noteswift.in", password: "admin@english" } // English Teacher
+    { email: "acharyaprasiddha6@gmail.com", password: "12345678" },
+    { email: "bikashpandey486@gmail.com", password: "admin@123" },
+    { email: "jagdishbhatt@noteswift.in", password: "admin@eco123" },
+    { email: "jayrajbhatt@noteswift.in", password: "admin@account" },
+    { email: "bishalbhatta@noteswift.in", password: "admin@english" }
   ];
 
   loginForm.addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault();
 
     const email = document.getElementById("login-email").value.trim();
     const password = document.getElementById("login-password").value.trim();
 
-    // Check if email exists
     const user = users.find(u => u.email === email);
 
     if (!user) {
@@ -26,9 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
       errorDiv.textContent = "Incorrect password, Please enter the correct password!";
       errorDiv.style.display = "block";
     } else {
-      // Save credentials to session storage if valid
-      sessionStorage.setItem("userEmail", email);
-      sessionStorage.setItem("userPassword", password);
+      // Save credentials in localStorage instead of sessionStorage
+      localStorage.setItem("userEmail", email);
+      localStorage.setItem("userPassword", password);
 
       // Redirect to index page after successful login
       window.location.href = "index.html";

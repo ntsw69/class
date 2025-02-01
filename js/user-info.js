@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const email = sessionStorage.getItem("userEmail");
-  const password = sessionStorage.getItem("userPassword");
+  const email = localStorage.getItem("userEmail");
+  const password = localStorage.getItem("userPassword");
 
   // Ensure both email and password exist before allowing access
   if (!email || !password || email.trim() === "" || password.trim() === "") {
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function logout() {
-  sessionStorage.removeItem("userEmail");
-  sessionStorage.removeItem("userPassword");
+  localStorage.removeItem("userEmail");
+  localStorage.removeItem("userPassword");
   window.location.href = "https://class.noteswift.in/sign-in.html"; // Redirect after logout
 }
