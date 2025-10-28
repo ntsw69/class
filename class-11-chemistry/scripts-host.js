@@ -2,7 +2,7 @@ import uitoolkit from 'https://class.noteswift.in/main/videosdk-ui-toolkit/index
 
 var sessionContainer = document.getElementById('sessionContainer');
 var config = {
-    videoSDKJWT: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfa2V5Ijoiam1iYnRVeDhUZTY0Nm5DUHpnZV9qQSIsInRwYyI6IkNsYXNzIDExIENoZW1pc3RyeSIsInJvbGVfdHlwZSI6MSwidXNlcl9pZGVudGl0eSI6IlRlYWNoZXIiLCJzZXNzaW9uX2tleSI6InVuaXF1ZV9zZXNzaW9uX2lkZW50aWZpZXIiLCJ2ZXJzaW9uIjoxLCJpYXQiOjE3NjE1MjcxMDgsImV4cCI6MTc2MTY5OTkwOH0.cwbPq5B8VLhL4wGqwy3GQV9oURI9vUBo3d1RxhoNLdA',  // This will be replaced by the updateTokens.js script
+    videoSDKJWT: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfa2V5Ijoiam1iYnRVeDhUZTY0Nm5DUHpnZV9qQSIsInRwYyI6IkNsYXNzIDExIENoZW1pc3RyeSIsInJvbGVfdHlwZSI6MSwidXNlcl9pZGVudGl0eSI6IlRlYWNoZXIiLCJzZXNzaW9uX2tleSI6InVuaXF1ZV9zZXNzaW9uX2lkZW50aWZpZXIiLCJ2ZXJzaW9uIjoxLCJpYXQiOjE3NjE2MTMxMzAsImV4cCI6MTc2MTc4NTkzMH0.cISGRtHk2MpmKyl-6SAbbYWpnTSq3tuhnUkBWrPUPLk',  // This will be replaced by the updateTokens.js script
     sessionName: 'Class 11 Chemistry',
     userName: 'Teacher',
     sessionPasscode: 'NTSW@#1216',
