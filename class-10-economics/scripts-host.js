@@ -2,7 +2,7 @@ import uitoolkit from 'https://class.noteswift.in/main/videosdk-ui-toolkit/index
 
 var sessionContainer = document.getElementById('sessionContainer');
 var config = {
-    videoSDKJWT: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfa2V5IjoiTnhEWWdyTVNSMUdSOHVqdDBTekppZyIsInRwYyI6IkNsYXNzIDEwIEVjb25vbWljcyIsInJvbGVfdHlwZSI6MSwidXNlcl9pZGVudGl0eSI6IlRlYWNoZXIiLCJzZXNzaW9uX2tleSI6InVuaXF1ZV9zZXNzaW9uX2lkZW50aWZpZXIiLCJ2ZXJzaW9uIjoxLCJpYXQiOjE3NjQ0NjQ5ODksImV4cCI6MTc2NDYzNzc4OX0.f9lvdbBx2UdCK4NDFHiSltq_dvE1TH8D66m6e8NXn4I',  // This will be replaced by the updateTokens.js script
+    videoSDKJWT: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfa2V5IjoiTnhEWWdyTVNSMUdSOHVqdDBTekppZyIsInRwYyI6IkNsYXNzIDEwIEVjb25vbWljcyIsInJvbGVfdHlwZSI6MSwidXNlcl9pZGVudGl0eSI6IlRlYWNoZXIiLCJzZXNzaW9uX2tleSI6InVuaXF1ZV9zZXNzaW9uX2lkZW50aWZpZXIiLCJ2ZXJzaW9uIjoxLCJpYXQiOjE3NjQ1NTE2NzIsImV4cCI6MTc2NDcyNDQ3Mn0.97I19itAuUmHTpsAevZKc85IqRwP1dyuDHjK8MsDXso',  // This will be replaced by the updateTokens.js script
     sessionName: 'Class 10 Economics',
     userName: 'Teacher',
     sessionPasscode: 'NTSW@#1216',
