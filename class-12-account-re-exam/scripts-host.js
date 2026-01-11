@@ -2,7 +2,7 @@ import uitoolkit from 'https://class.noteswift.in/main/videosdk-ui-toolkit/index
 
 var sessionContainer = document.getElementById('sessionContainer');
 var config = {
-    videoSDKJWT: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfa2V5IjoiTnA2VTFFdXNUX0djaTFNU3J1QWF2USIsInRwYyI6IkNsYXNzIDEyIEFjY291bnQgUmVleGFtIiwicm9sZV90eXBlIjoxLCJ1c2VyX2lkZW50aXR5IjoiVGVhY2hlciIsInNlc3Npb25fa2V5IjoidW5pcXVlX3Nlc3Npb25faWRlbnRpZmllciIsInZlcnNpb24iOjEsImlhdCI6MTc2ODAwNzE1NywiZXhwIjoxNzY4MTc5OTU3fQ.DwyYON_Cd3x8L0S8t_olcZe8fY8pZ5Y9C2KppLH8SeI',  // This will be replaced by the updateTokens.js script
+    videoSDKJWT: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfa2V5IjoiTnA2VTFFdXNUX0djaTFNU3J1QWF2USIsInRwYyI6IkNsYXNzIDEyIEFjY291bnQgUmVleGFtIiwicm9sZV90eXBlIjoxLCJ1c2VyX2lkZW50aXR5IjoiVGVhY2hlciIsInNlc3Npb25fa2V5IjoidW5pcXVlX3Nlc3Npb25faWRlbnRpZmllciIsInZlcnNpb24iOjEsImlhdCI6MTc2ODA5NDA2NywiZXhwIjoxNzY4MjY2ODY3fQ.V8xJ97ZEu6mR6FZFd6t90zLwAbYcPGiAV52xb_PC-yQ',  // This will be replaced by the updateTokens.js script
     sessionName: 'Class 12 Account Reexam',
     userName: 'Teacher',
     sessionPasscode: 'NTSW@#1216',
